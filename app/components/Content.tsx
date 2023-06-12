@@ -29,10 +29,6 @@ export const Content = () => {
           </span>{" "}
           Расселение
         </h2>
-        <p className="text-base text-gray-700 md:text-lg">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </p>
       </div>
       <div className="grid max-w-screen-lg gap-8 lg:grid-cols-2 sm:mx-auto">
         <div className="grid grid-cols-2 gap-5">

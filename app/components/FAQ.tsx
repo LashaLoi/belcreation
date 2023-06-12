@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type PropsWithChildren } from "react";
 
 type ItemProps = PropsWithChildren<{
@@ -94,33 +95,49 @@ export const Faq = () => {
                     height="24"
                   />
                 </svg>
-                <span className="relative">The</span>
               </span>{" "}
-              quick, brown fox jumps over a lazy dog
+              Часто задаваемые вопросы:
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque rem aperiam, eaque ipsa quae.
-            </p>
           </div>
         </div>
         <div className="space-y-4">
-          <Item title="The quick, brown fox jumps over a lazy dog?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+          <Item title="Будет ли горячая вода на лагере?">
+            Да! И холодная тоже! Также будут хорошо оборудованные туалеты.
           </Item>
-          <Item title="The first mate and his Skipper too will do?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+          <Item title="Со скольки и до скольки лет можно ехать в лагерь?">
+            Наш лагерь не имеет возрастных ограничений! Сколько бы лет вам ни
+            было, мы ждём вас!
           </Item>
-          <Item title="Is the Space Pope reptilian!?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+          <Item title="Что входит в оплату за лагерь?">
+            Трёхразовое питание, свет, вода, призы и сама территория.
           </Item>
-          <Item title="How much money you got on you?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+          <Item title="Я еду с детьми, будет ли для них какая-то программа?">
+            ДА!
           </Item>
+          <Item title="Как добраться до лагеря?">
+            Если вы едете с другого города на своём транспорте, вы можете сразу
+            ехать на площадку?? По адресу …. Если же у вас нет возможности самим
+            доехать, в 10??? По адресу Смоленская 28 автобус заберёт вас до
+            пункта назначения.{" "}
+          </Item>
+          <Item title="Могу ли я приехать не на все дни?">
+            Если вы едете с другого города на своём транспорте, вы можете сразу
+            ехать на площадку?? По адресу …. Если же у вас нет возможности самим
+            доехать, в 10??? По адресу Смоленская 28 автобус заберёт вас до
+            пункта назначения.{" "}
+          </Item>
+          <div className="h-16"></div>
+          <Link href="/register" className="flex items-center justify-center">
+            <button className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-teal-500 rounded-xl group">
+              <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-teal-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+              </span>
+              <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-teal-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+              <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
+                Регистрация
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
