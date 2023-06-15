@@ -1,135 +1,233 @@
+"use client";
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useCallback } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  fullName: string;
+  age: number;
+  phone: string;
+  church: string;
+  city: string;
+  child: boolean;
+  childInfo: string;
+  alerg: string;
+  youtime: string;
+  merried: boolean;
+  merriedInfo: string;
+};
+
 export default function Register() {
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const isChild = watch("child");
+  const isMerried = watch("merried");
+
+  const onSubmit: SubmitHandler<Inputs> = useCallback((data) => {
+    console.log(data);
+
+    router.push("/final");
+  }, []);
+
   return (
     <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div className="container max-w-screen-lg mx-auto">
         <div>
-          <h2 className="font-semibold text-xl text-gray-600">
-            Responsive Form
+          <h2 className="font-semibold text-xl text-gray-600 mb-4">
+            Регистрация на BELCREATION
           </h2>
-          <p className="text-gray-500 mb-6">
-            Form is mobile responsive. Give it a try.
-          </p>
+          <div className="text-gray-500 mb-6">ОПЛАТА</div>
+          <div className="text-gray-500 mb-6">
+            <div>
+              Если вы едете на лагерь с 14-19 августа (все дни лагеря), тогда:
+            </div>
+            <div>Проживание в домике будет стоить - 70$ или 205р </div>
+            <div>Проживание в платке будет стоить - 50$ или 150р</div>
+          </div>
+          <div className="text-gray-500 mb-6">
+            <div>
+              Если же вы будете пребывать на лагере в другие дни, тогда:
+            </div>
+            <div>Проживание в домике (за 1 ночь) - 15$ или 45р</div>
+            <div>Проживание в платке (за 1 ночь) - 10$ или 30р</div>
+          </div>
+          <div className="text-gray-500 mb-6">
+            <div>Для семьи от 5 человек:</div>
+            <div>
+              Цена за проживание в домике (за одного человека) - 50$ или 150р
+            </div>
+            <div>
+              Цена за проживание в палатке (за одного человека) - 35$ или 100р{" "}
+            </div>
+          </div>
 
           <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
               <div className="text-gray-600">
-                <p className="font-medium text-lg">Personal Details</p>
-                <p>Please fill out all the fields.</p>
+                <p className="font-medium text-lg">Персональные данные</p>
+                <p>Пожалуйста заполните все поля</p>
               </div>
 
               <div className="lg:col-span-2">
-                <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                <form
+                  className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
                   <div className="md:col-span-5">
-                    <label htmlFor="full_name">Full Name</label>
+                    <label htmlFor="fullName">ФИО</label>
                     <input
-                      type="text"
-                      name="full_name"
-                      id="full_name"
+                      {...register("fullName")}
+                      id="fullName"
                       className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      required
                     />
                   </div>
                   <div className="md:col-span-5">
-                    <label htmlFor="email">Email Address</label>
+                    <label htmlFor="age">Возраст</label>
                     <input
-                      type="text"
-                      name="email"
-                      id="email"
+                      {...register("age")}
+                      type="number"
+                      id="age"
                       className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                      placeholder="email@domain.com"
+                      required
                     />
                   </div>
-                  <div className="md:col-span-3">
-                    <label htmlFor="address">Address / Street</label>
+                  <div className="md:col-span-5">
+                    <label htmlFor="phone">Номер телефона</label>
                     <input
-                      type="text"
-                      name="address"
-                      id="address"
+                      {...register("phone")}
+                      type="tel"
+                      name="phone"
                       className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                      placeholder=""
+                      required
                     />
                   </div>
-                  <div className="md:col-span-2">
-                    <label htmlFor="city">City</label>
+                  <div className="md:col-span-5">
+                    <label htmlFor="church">Церковь</label>
                     <input
-                      type="text"
-                      name="city"
-                      id="city"
+                      {...register("church")}
+                      id="church"
                       className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                      placeholder=""
+                      required
                     />
                   </div>
-                  <div className="md:col-span-2">
-                    <label htmlFor="country">Country / region</label>
+                  <div className="md:col-span-5">
+                    <label htmlFor="city">Город</label>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
-                        name="country"
-                        id="country"
-                        placeholder="Country"
+                        {...register("city")}
+                        id="city"
                         className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        required
                       />
                     </div>
                   </div>
-                  <div className="md:col-span-2">
-                    <label htmlFor="state">State / province</label>
+
+                  <div className="md:col-span-5">
+                    <label htmlFor="youtime">
+                      Хочу участвовать в{" "}
+                      <Link href="/your-time" className="text-teal-500">
+                        «Твое время»
+                      </Link>
+                    </label>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
-                        name="state"
-                        id="state"
-                        placeholder="State"
+                        {...register("youtime")}
+                        id="youtime"
                         className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        required
                       />
                     </div>
                   </div>
-                  <div className="md:col-span-1">
-                    <label htmlFor="zipcode">Zipcode</label>
-                    <input
-                      type="text"
-                      name="zipcode"
-                      id="zipcode"
-                      className="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                      placeholder=""
-                    />
-                  </div>
                   <div className="md:col-span-5">
-                    <label htmlFor="full_name">Full Name</label>
-                    <input
-                      type="text"
-                      name="full_name"
-                      id="full_name"
-                      className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                    />
-                  </div>
-                  <div className="md:col-span-5">
-                    <label htmlFor="email">Email Address</label>
-                    <input
-                      type="text"
-                      name="email"
-                      id="email"
-                      className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                      placeholder="email@domain.com"
-                    />
-                  </div>
-                  <div className="md:col-span-5">
-                    <div className="inline-flex items-center">
-                      <input
-                        type="checkbox"
-                        name="billing_same"
-                        id="billing_same"
-                        className="form-checkbox"
-                      />
-                      <label htmlFor="billing_same" className="ml-2">
-                        My billing address is different than above.
+                    <div className="form-control">
+                      <label className="cursor-pointer label w-[230px]">
+                        <span className="label-text">
+                          Еду с супругой / супругом
+                        </span>
+                        <input
+                          {...register("merried")}
+                          type="checkbox"
+                          className="checkbox checkbox-accent"
+                        />
                       </label>
                     </div>
                   </div>
-                  <div className="md:col-span-5 text-right">
+                  {isMerried && (
+                    <div className="md:col-span-5">
+                      <label htmlFor="merriedInfo">
+                        Укажите ФИО и возраст{" "}
+                      </label>
+                      <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                        <textarea
+                          {...register("merriedInfo")}
+                          id="merriedInfo"
+                          className="px-4 h-28 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                          required
+                        />
+                      </div>
+                    </div>
+                  )}
+                  <div className="md:col-span-5">
+                    <div className="form-control">
+                      <label className="cursor-pointer label w-[140px]">
+                        <span className="label-text">Еду с детьми</span>
+                        <input
+                          {...register("child")}
+                          type="checkbox"
+                          className="checkbox checkbox-accent"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  {isChild && (
+                    <>
+                      <div className="md:col-span-5">
+                        <label htmlFor="childInfo">
+                          Укажите имя и возраст детей{" "}
+                        </label>
+                        <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                          <textarea
+                            {...register("childInfo")}
+                            id="childInfo"
+                            className="px-4 h-28 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="md:col-span-5">
+                        <label htmlFor="alerg">
+                          Есть ли какая-то пищевая аллергия или аллергия на
+                          медикаменты?
+                        </label>
+                        <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                          <input
+                            {...register("alerg")}
+                            id="alerg"
+                            className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </>
+                  )}
+
+                  <div className="md:col-span-5 mt-5 text-right">
                     <div className="inline-flex items-end">
                       <button className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
                         Отправить
                       </button>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
