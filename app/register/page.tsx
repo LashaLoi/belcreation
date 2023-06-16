@@ -92,18 +92,18 @@ export default function Register() {
           </h2>
           <div className="text-gray-500 mb-2">ОПЛАТА</div>
           <div className="text-gray-500 mb-2">
-            <div>Проживание в домике будет стоить - 70$ или 205р </div>
-            <div>Проживание в платке будет стоить - 50$ или 150р</div>
+            <div>Проживание в домике будет стоить - 210р</div>
+            <div>Проживание в платке будет стоить - 150р</div>
+          </div>
+
+          <div className="text-gray-500 mb-4">
+            <div>Для семьи от 5 человек:</div>
+            <div>Цена за проживание в домике (за одного человека) - 150р</div>
+            <div>Цена за проживание в палатке (за одного человека) - 100р</div>
           </div>
 
           <div className="text-gray-500 mb-6">
-            <div>Для семьи от 5 человек:</div>
-            <div>
-              Цена за проживание в домике (за одного человека) - 50$ или 150р
-            </div>
-            <div>
-              Цена за проживание в палатке (за одного человека) - 35$ или 100р{" "}
-            </div>
+            <div>Детям до 3 лет - бесплатно</div>
           </div>
 
           <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
@@ -176,7 +176,7 @@ export default function Register() {
                       </Link>
                     </label>
                     <p className="text-gray-500 mt-2">
-                      <span className="text-red-300">*</span>большая просьба до
+                      <span className="text-red-300">*</span>большая просьба, до
                       лагеря скачать необходимую музыку на флешку, или взять
                       нужный вам реквизит для вашего номера
                     </p>

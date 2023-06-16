@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: white;
+}
+
 .confetti {
   display: flex;
   justify-content: center;

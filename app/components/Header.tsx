@@ -5,7 +5,7 @@ export const Header = () => {
     <div className="hero min-h-screen bg-local md:bg-fixed bg-cover bg-[url(/1.jpg)]">
       <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className="flex flex-col justify-center items-center max-w-[700px]">
+        <div className="flex flex-col justify-center items-center max-w-[740px]">
           <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
             BELCREATION
           </h1>
@@ -14,10 +14,10 @@ export const Header = () => {
             погружения в атмосферу Духа Святого. Семинары, проповеди, личное
             время с Богом, вечер хвалы и поклонения - это все для того, чтобы
             каждый смог отвлечься от своих ежедневных дел и посвятить себя Богу!
-            А также командные игры, твоё время, творческие выступления, где
-            поучаствовать сможет каждый! Не пропусти это время! Время, где ты
-            сможешь не только обрести новых друзей, семью, скинуть килограммы,
-            но и провести качественное время с Иисусом.
+            А также командные игры, &quot;Tвоё время&quot;, творческие
+            выступления, где поучаствовать сможет каждый! Не пропусти это время!
+            Время, где ты сможешь не только обрести новых друзей, семью, скинуть
+            килограммы, но и провести качественное время с Иисусом.
           </p>
           <Link
             href="/register"
