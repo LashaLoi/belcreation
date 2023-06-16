@@ -2,10 +2,7 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div
-      className="hero min-h-screen bg-fixed bg-cover"
-      style={{ backgroundImage: "url(/1.jpg)" }}
-    >
+    <div className="hero min-h-screen bg-fixed bg-cover bg-[url(/1.jpg)]">
       <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="flex flex-col justify-center items-center max-w-[700px]">
