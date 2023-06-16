@@ -1,145 +1,142 @@
-"use client";
-
-import Link from "next/link";
-import { useState, type PropsWithChildren } from "react";
-
-type ItemProps = PropsWithChildren<{
-  title: string;
-}>;
-
-const Item: React.FC<ItemProps> = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border rounded shadow-sm">
-      <button
-        type="button"
-        aria-label="Open item"
-        title="Open item"
-        className="flex items-center justify-between w-full p-4 focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <p className="text-lg font-medium">{title}</p>
-        <div className="flex items-center justify-center w-8 h-8 border rounded-full">
-          <svg
-            viewBox="0 0 24 24"
-            className={`w-3 text-gray-600 transition-transform duration-200 ${
-              isOpen ? "transform rotate-180" : ""
-            }`}
-          >
-            <polyline
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              points="2,7 12,17 22,7"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </button>
-      {isOpen && (
-        <div className="p-4 pt-0">
-          <p className="text-gray-700">{children}</p>
-        </div>
-      )}
-    </div>
-  );
-};
-
 export const Faq = () => {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
-        <div className="flex flex-col mb-16 sm:text-center">
-          <a href="/" className="mb-6 sm:mx-auto">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
-              <svg
-                className="w-10 h-10 text-deep-purple-accent-400"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
-            </div>
-          </a>
-          <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-              <span className="relative inline-block">
+    <section className="bg-white dark:bg-gray-900">
+      <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <h2 className="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+          Часто задаваемые вопросы:
+        </h2>
+        <div className="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
+          <div>
+            <div className="mb-10">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
                 <svg
-                  viewBox="0 0 52 24"
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
                   fill="currentColor"
-                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <defs>
-                    <pattern
-                      id="ec5d8ef5-b853-4714-b94f-df28ec98eeb7"
-                      x="0"
-                      y="0"
-                      width=".135"
-                      height=".30"
-                    >
-                      <circle cx="1" cy="1" r=".7" />
-                    </pattern>
-                  </defs>
-                  <rect
-                    fill="url(#ec5d8ef5-b853-4714-b94f-df28ec98eeb7)"
-                    width="52"
-                    height="24"
-                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
                 </svg>
-              </span>{" "}
-              Часто задаваемые вопросы:
-            </h2>
+                Будет ли горячая вода на лагере?
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400">
+                Да! И холодная тоже! Также будут хорошо оборудованные туалеты.
+              </p>
+            </div>
+            <div className="mb-10">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                <svg
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Со скольки и до скольки лет можно ехать в лагерь?
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400">
+                Наш лагерь не имеет возрастных ограничений! Сколько бы лет вам
+                ни было, мы ждём вас!
+              </p>
+            </div>
+            <div className="mb-10">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                <svg
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Что входит в оплату за лагерь?
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400">
+                Трёхразовое питание, свет, вода, призы и сама территория.
+              </p>
+            </div>
+            <div className="mb-10">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                <svg
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Я еду с детьми, будет ли для них какая-то программа?
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400">ДА!</p>
+            </div>
+          </div>
+          <div>
+            <div className="mb-10">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                <svg
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Как добраться до лагеря?
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400">
+                Если вы едете с другого города на своём транспорте, вы можете
+                сразу ехать на площадку?? По адресу …. Если же у вас нет
+                возможности самим доехать, в 10??? По адресу Смоленская 28
+                автобус заберёт вас до пункта назначения.{" "}
+              </p>
+            </div>
+            <div className="mb-10">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                <svg
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Могу ли я приехать не на все дни?
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400">
+                Если вы едете с другого города на своём транспорте, вы можете
+                сразу ехать на площадку?? По адресу …. Если же у вас нет
+                возможности самим доехать, в 10??? По адресу Смоленская 28
+                автобус заберёт вас до пункта назначения.{" "}
+              </p>
+            </div>
           </div>
         </div>
-        <div className="space-y-4">
-          <Item title="Будет ли горячая вода на лагере?">
-            Да! И холодная тоже! Также будут хорошо оборудованные туалеты.
-          </Item>
-          <Item title="Со скольки и до скольки лет можно ехать в лагерь?">
-            Наш лагерь не имеет возрастных ограничений! Сколько бы лет вам ни
-            было, мы ждём вас!
-          </Item>
-          <Item title="Что входит в оплату за лагерь?">
-            Трёхразовое питание, свет, вода, призы и сама территория.
-          </Item>
-          <Item title="Я еду с детьми, будет ли для них какая-то программа?">
-            ДА!
-          </Item>
-          <Item title="Как добраться до лагеря?">
-            Если вы едете с другого города на своём транспорте, вы можете сразу
-            ехать на площадку?? По адресу …. Если же у вас нет возможности самим
-            доехать, в 10??? По адресу Смоленская 28 автобус заберёт вас до
-            пункта назначения.{" "}
-          </Item>
-          <Item title="Могу ли я приехать не на все дни?">
-            Если вы едете с другого города на своём транспорте, вы можете сразу
-            ехать на площадку?? По адресу …. Если же у вас нет возможности самим
-            доехать, в 10??? По адресу Смоленская 28 автобус заберёт вас до
-            пункта назначения.{" "}
-          </Item>
-          <div className="h-16"></div>
-          <Link href="/register" className="flex items-center justify-center">
-            <button className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-teal-500 rounded-xl group">
-              <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-teal-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-                <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-              </span>
-              <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-teal-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-              <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
-                Регистрация
-              </span>
-            </button>
-          </Link>
-        </div>
       </div>
-    </div>
+    </section>
   );
 };

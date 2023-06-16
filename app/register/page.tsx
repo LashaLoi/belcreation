@@ -26,11 +26,14 @@ export default function Register() {
   const supabase = createClientComponentClient();
 
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const isChild = watch("child");
   const isMerried = watch("merried");
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setLoading(true);
+
     const user = await supabase.from("users").insert([
       {
         fullName: data["fullName"] ?? "-",
@@ -49,6 +52,7 @@ export default function Register() {
 
     if (user.error) {
       setError(true);
+      setLoading(false);
 
       return;
     }
@@ -261,8 +265,11 @@ export default function Register() {
 
                   <div className="md:col-span-5 mt-5 text-right">
                     <div className="inline-flex items-end">
-                      <button className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
-                        Отправить
+                      <button
+                        disabled={loading}
+                        className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        {loading ? "Отправка..." : "Отправить"}
                       </button>
                     </div>
                   </div>
