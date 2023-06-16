@@ -1,8 +1,9 @@
 "use client";
 
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
@@ -21,25 +22,63 @@ type Inputs = {
 
 export default function Register() {
   const router = useRouter();
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<Inputs>();
+  const { register, handleSubmit, watch } = useForm<Inputs>();
+  const supabase = createClientComponentClient();
+
+  const [error, setError] = useState(false);
 
   const isChild = watch("child");
   const isMerried = watch("merried");
 
-  const onSubmit: SubmitHandler<Inputs> = useCallback((data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const user = await supabase.from("users").insert([
+      {
+        fullName: data["fullName"] ?? "-",
+        age: data["age"] ?? "-",
+        phone: data["phone"] ?? "-",
+        church: data["church"] ?? "-",
+        city: data["city"] ?? "-",
+        child: data["child"] ?? "-",
+        childInfo: data["childInfo"] ?? "-",
+        alerg: data["alerg"] ?? "-",
+        youtime: data["youtime"] ?? "-",
+        merried: data["merried"] ?? "-",
+        merriedInfo: data["merriedInfo"] ?? "-",
+      },
+    ]);
+
+    if (user.error) {
+      setError(true);
+
+      return;
+    }
 
     router.push("/final");
-  }, []);
+  };
 
   return (
     <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div className="container max-w-screen-lg mx-auto">
+        {error && (
+          <div className="alert alert-error mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>
+              Что-то пошло не так, перезагрузите страницу и попробуйте снова
+            </span>
+          </div>
+        )}
         <div>
           <h2 className="font-semibold text-xl text-gray-600 mb-4">
             Регистрация на BELCREATION
