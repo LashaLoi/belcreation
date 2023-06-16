@@ -14,10 +14,12 @@ type Inputs = {
   city: string;
   child: boolean;
   childInfo: string;
+  childAge: string;
   alerg: string;
   youtime: string;
   merried: boolean;
   merriedInfo: string;
+  merriedAge: string;
 };
 
 export default function Register() {
@@ -42,11 +44,12 @@ export default function Register() {
         church: data["church"] ?? "-",
         city: data["city"] ?? "-",
         child: data["child"] ?? "-",
-        childInfo: data["childInfo"] ?? "-",
+        childInfo: (data["childInfo"] ?? "-") + " " + (data["childAge"] ?? "-"),
         alerg: data["alerg"] ?? "-",
         youtime: data["youtime"] ?? "-",
         merried: data["merried"] ?? "-",
-        merriedInfo: data["merriedInfo"] ?? "-",
+        merriedInfo:
+          (data["merriedInfo"] ?? "-") + " " + (data["merriedAge"] ?? "-"),
       },
     ]);
 
@@ -116,7 +119,7 @@ export default function Register() {
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <div className="md:col-span-5">
-                    <label htmlFor="fullName">ФИО</label>
+                    <label htmlFor="fullName">Фамилия и имя</label>
                     <input
                       {...register("fullName")}
                       id="fullName"
@@ -201,19 +204,33 @@ export default function Register() {
                     </div>
                   </div>
                   {isMerried && (
-                    <div className="md:col-span-5">
-                      <label htmlFor="merriedInfo">
-                        Укажите ФИО и возраст{" "}
-                      </label>
-                      <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
-                        <textarea
-                          {...register("merriedInfo")}
-                          id="merriedInfo"
-                          className="px-4 h-28 appearance-none outline-none text-gray-800 w-full bg-transparent"
-                          required
-                        />
+                    <>
+                      <div className="md:col-span-5">
+                        <label htmlFor="merriedInfo">
+                          Укажите фимилию и имя
+                        </label>
+                        <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                          <textarea
+                            {...register("merriedInfo")}
+                            id="merriedInfo"
+                            className="px-4 h-28 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                            required
+                          />
+                        </div>
                       </div>
-                    </div>
+                      <div className="md:col-span-5">
+                        <label htmlFor="merriedAge">Укажите возраст</label>
+                        <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                          <input
+                            {...register("merriedAge")}
+                            type="number"
+                            id="merriedAge"
+                            className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </>
                   )}
                   <div className="md:col-span-5">
                     <div className="form-control">
@@ -230,14 +247,25 @@ export default function Register() {
                   {isChild && (
                     <>
                       <div className="md:col-span-5">
-                        <label htmlFor="childInfo">
-                          Укажите имя и возраст детей{" "}
-                        </label>
+                        <label htmlFor="childInfo">Укажите имя / имена</label>
                         <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                           <textarea
                             {...register("childInfo")}
                             id="childInfo"
                             className="px-4 h-28 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="md:col-span-5">
+                        <label htmlFor="childAge">
+                          Укажите возраст / возроста
+                        </label>
+                        <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                          <input
+                            {...register("childAge")}
+                            id="childAge"
+                            className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                             required
                           />
                         </div>
