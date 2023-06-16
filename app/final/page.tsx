@@ -4,8 +4,8 @@ import { Confetti } from "../components/Confetti";
 export default function FinalPage() {
   return (
     <div
-      className="hero min-h-[600px] bg-fixed"
-      style={{ backgroundImage: "url(/2.jpg)" }}
+      className="hero min-h-[600px] bg-fixed bg-cover"
+      style={{ backgroundImage: "url(/1.jpg)" }}
     >
       <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-center text-neutral-content">

@@ -3,7 +3,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <div
-      className="hero min-h-screen bg-fixed"
+      className="hero min-h-screen bg-fixed bg-cover"
       style={{ backgroundImage: "url(/1.jpg)" }}
     >
       <div className="hero-overlay bg-opacity-70"></div>

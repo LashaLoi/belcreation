@@ -87,21 +87,12 @@ export default function Register() {
           <h2 className="font-semibold text-xl text-gray-600 mb-4">
             Регистрация на BELCREATION
           </h2>
-          <div className="text-gray-500 mb-6">ОПЛАТА</div>
-          <div className="text-gray-500 mb-6">
-            <div>
-              Если вы едете на лагерь с 14-19 августа (все дни лагеря), тогда:
-            </div>
+          <div className="text-gray-500 mb-2">ОПЛАТА</div>
+          <div className="text-gray-500 mb-2">
             <div>Проживание в домике будет стоить - 70$ или 205р </div>
             <div>Проживание в платке будет стоить - 50$ или 150р</div>
           </div>
-          <div className="text-gray-500 mb-6">
-            <div>
-              Если же вы будете пребывать на лагере в другие дни, тогда:
-            </div>
-            <div>Проживание в домике (за 1 ночь) - 15$ или 45р</div>
-            <div>Проживание в платке (за 1 ночь) - 10$ или 30р</div>
-          </div>
+
           <div className="text-gray-500 mb-6">
             <div>Для семьи от 5 человек:</div>
             <div>
@@ -181,6 +172,11 @@ export default function Register() {
                         «Твое время»
                       </Link>
                     </label>
+                    <p className="text-gray-500 mt-2">
+                      <span className="text-red-300">*</span>большая просьба до
+                      лагеря скачать необходимую музыку на флешку, или взять
+                      нужный вам реквизит для вашего номера
+                    </p>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
                         {...register("youtime")}
