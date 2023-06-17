@@ -11,7 +11,7 @@ export default function FinalPage() {
             BELCREATION
           </h1>
           <p className="mb-6 font-light lg:mb-8 md:text-md lg:text-xl text-lg dark:text-gray-400 text-start">
-            Регистрацяи прошла успешно!
+            Регистрация прошла успешно!
           </p>
           <div className="z-50 gap-4 flex">
             <Link href="/">
