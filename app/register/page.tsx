@@ -93,7 +93,7 @@ export default function Register() {
           <div className="text-gray-500 mb-2">ОПЛАТА</div>
           <div className="text-gray-500 mb-2">
             <div>Проживание в домике будет стоить - 210р</div>
-            <div>Проживание в платке будет стоить - 150р</div>
+            <div>Проживание в палатке будет стоить - 150р</div>
           </div>
 
           <div className="text-gray-500 mb-4">
