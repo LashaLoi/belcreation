@@ -20,6 +20,8 @@ type Inputs = {
   merried: boolean;
   merriedInfo: string;
   merriedAge: string;
+  house: string;
+  comment: string;
 };
 
 export default function Register() {
@@ -50,6 +52,8 @@ export default function Register() {
         merried: data["merried"] ?? "-",
         merriedInfo:
           (data["merriedInfo"] ?? "-") + " " + (data["merriedAge"] ?? "-"),
+        house: data["house"] ?? "-",
+        comment: data["comment"] ?? "-",
       },
     ]);
 
@@ -166,6 +170,22 @@ export default function Register() {
                         required
                       />
                     </div>
+                  </div>
+                  <div className="md:col-span-5 flex flex-col mb-2">
+                    <label htmlFor="city" className="mb-2">
+                      Расселение
+                    </label>
+                    <select
+                      className="select select-accent w-full max-w-xs"
+                      defaultValue="Нужно место в палатке"
+                      {...register("house")}
+                    >
+                      <option value="Нужно место в палатке">
+                        Нужно место в палатке
+                      </option>
+                      <option value="Своя палаткай">Своя палатка</option>
+                      <option value="В домике">В домике</option>
+                    </select>
                   </div>
 
                   <div className="md:col-span-5">
@@ -286,6 +306,16 @@ export default function Register() {
                       </div>
                     </>
                   )}
+                  <div className="md:col-span-5">
+                    <label htmlFor="merriedInfo">Комментарий</label>
+                    <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                      <textarea
+                        {...register("comment")}
+                        id="merriedInfo"
+                        className="px-4 h-28 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                      />
+                    </div>
+                  </div>
 
                   <div className="md:col-span-5 mt-5 text-right">
                     <div className="inline-flex items-end">
