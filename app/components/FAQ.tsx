@@ -1,16 +1,16 @@
 export const Faq = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white ">
       <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <h2 className="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        <h2 className="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 ">
           Часто задаваемые вопросы:
         </h2>
-        <div className="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
+        <div className="grid pt-8 text-left border-t border-gray-200 md:gap-16  md:grid-cols-2">
           <div>
             <div className="mb-10">
-              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 ">
                 <svg
-                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 "
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -23,14 +23,14 @@ export const Faq = () => {
                 </svg>
                 Будет ли горячая вода на лагере?
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 ">
                 Да! И холодная тоже! Также будут хорошо оборудованные туалеты.
               </p>
             </div>
             <div className="mb-10">
-              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 ">
                 <svg
-                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 "
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,15 +43,15 @@ export const Faq = () => {
                 </svg>
                 Есть ли возрастные ограничения в лагере?
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 ">
                 Наш лагерь не имеет возрастных ограничений! Сколько бы лет вам
                 ни было, мы ждём вас!
               </p>
             </div>
             <div className="mb-10">
-              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 ">
                 <svg
-                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                  className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 "
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ export const Faq = () => {
                 </svg>
                 Я еду с детьми, будет ли для них программа?
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 ">
                 Да, мы предоставляем программу для детей от 6 до 11 лет, с 9
                 утра до 9 вечера.
               </p>

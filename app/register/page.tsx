@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Button } from "../components/Button";
 
 type Inputs = {
   fullName: string;
@@ -176,7 +177,7 @@ export default function Register() {
                       Расселение
                     </label>
                     <select
-                      className="select select-accent w-full max-w-xs"
+                      className="select select-primary w-full max-w-xs"
                       defaultValue="Нужно место в палатке"
                       {...register("house")}
                     >
@@ -191,7 +192,7 @@ export default function Register() {
                   <div className="md:col-span-5">
                     <label htmlFor="youtime">
                       Хочу участвовать в{" "}
-                      <Link href="/your-time" className="text-teal-500">
+                      <Link href="/your-time" className="text-purple-500">
                         «Твое время»
                       </Link>
                     </label>
@@ -218,7 +219,7 @@ export default function Register() {
                         <input
                           {...register("merried")}
                           type="checkbox"
-                          className="checkbox checkbox-accent"
+                          className="checkbox checkbox-primary"
                         />
                       </label>
                     </div>
@@ -259,7 +260,7 @@ export default function Register() {
                         <input
                           {...register("child")}
                           type="checkbox"
-                          className="checkbox checkbox-accent"
+                          className="checkbox checkbox-primary"
                         />
                       </label>
                     </div>
@@ -319,12 +320,9 @@ export default function Register() {
 
                   <div className="md:col-span-5 mt-5 text-right">
                     <div className="inline-flex items-end">
-                      <button
-                        disabled={loading}
-                        className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
-                      >
+                      <Button disabled={loading}>
                         {loading ? "Отправка..." : "Отправить"}
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </form>

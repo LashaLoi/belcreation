@@ -71,7 +71,15 @@ export const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
-        <p className="text-sm text-gray-600">Created by @SideswipeLoi</p>
+        <p className="text-sm text-gray-600">
+          Created by{" "}
+          <a
+            href="https://t.me/SideswipeLoi"
+            className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          >
+            @SideswipeLoi
+          </a>
+        </p>
       </div>
     </div>
   );
