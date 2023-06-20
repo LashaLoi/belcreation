@@ -1,45 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { Button } from "./Button";
-import { useParallax } from "react-scroll-parallax";
-import { useState, useEffect } from "react";
 
 export const Content = () => {
-  const [width, setWidth] = useState<number>(window.innerWidth);
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const isMobile = width <= 1100;
-
-  const { ref: ref1 } = useParallax<HTMLImageElement>({
-    speed: isMobile ? 0 : -5,
-  });
-  const { ref: ref2 } = useParallax<HTMLImageElement>({
-    speed: isMobile ? 0 : -2,
-  });
-  const { ref: ref3 } = useParallax<HTMLImageElement>({
-    speed: isMobile ? 0 : -4,
-  });
-  const { ref: ref4 } = useParallax<HTMLImageElement>({
-    speed: isMobile ? 0 : -6,
-  });
-  const { ref: ref5 } = useParallax<HTMLImageElement>({
-    speed: isMobile ? 0 : -3,
-  });
-  const { ref: ref6 } = useParallax<HTMLImageElement>({
-    speed: isMobile ? 0 : -7,
-  });
-
   return (
     <>
       <section className="bg-white z-10">
@@ -49,13 +11,11 @@ export const Content = () => {
               className="w-full rounded-lg"
               src="2.jpg"
               alt="office content 1"
-              ref={ref1}
             />
             <img
               className="mt-4 w-full lg:mt-10 rounded-lg"
               src="3.jpg"
               alt="office content 2"
-              ref={ref2}
             />
           </div>
           <div className="font-light text-gray-500 sm:text-lg ">
@@ -96,13 +56,11 @@ export const Content = () => {
               className="w-full rounded-lg"
               src="/your-1.jpg"
               alt="office content 1"
-              ref={ref3}
             />
             <img
               className="mt-4 w-full lg:mt-10 rounded-lg"
               src="/your-2.jpg"
               alt="office content 2"
-              ref={ref4}
             />
           </div>
         </div>
@@ -114,13 +72,11 @@ export const Content = () => {
               className="w-full rounded-lg"
               src="30.jpg"
               alt="office content 1"
-              ref={ref5}
             />
             <img
               className="mt-4 w-full lg:mt-10 rounded-lg"
               src="33.jpg"
               alt="office content 2"
-              ref={ref6}
             />
           </div>
           <div className="font-light text-gray-500 sm:text-lg ">
