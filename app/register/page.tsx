@@ -1,7 +1,6 @@
 "use client";
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -115,7 +114,7 @@ export default function Register() {
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
               <div className="text-gray-600">
                 <p className="font-medium text-lg">Персональные данные</p>
-                <p>Пожалуйста заполните все поля</p>
+                <p>Пожалуйста, заполните все поля</p>
               </div>
 
               <div className="lg:col-span-2">
@@ -191,10 +190,7 @@ export default function Register() {
 
                   <div className="md:col-span-5">
                     <label htmlFor="youtime">
-                      Хочу участвовать в{" "}
-                      <Link href="/your-time" className="text-purple-500">
-                        «Твое время»
-                      </Link>
+                      Хочу участвовать в «Твое время»
                     </label>
                     <p className="text-gray-500 mt-2">
                       <span className="text-red-300">*</span>большая просьба, до
