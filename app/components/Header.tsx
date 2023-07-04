@@ -6,7 +6,7 @@ export const Header = () => (
     <div className="hero-overlay bg-opacity-70" />
     <div className="hero-content text-center text-neutral-content">
       <div className="flex flex-col justify-center items-center max-w-[740px]">
-        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
           BELCREATION
         </h1>
         <p className="mb-6 font-light lg:mb-8 md:text-md lg:text-xl text-lg text-white text-start">

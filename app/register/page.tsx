@@ -22,6 +22,7 @@ type Inputs = {
   merriedAge: string;
   house: string;
   comment: string;
+  tranfer: string;
 };
 
 export default function Register() {
@@ -54,6 +55,7 @@ export default function Register() {
           (data["merriedInfo"] ?? "-") + " " + (data["merriedAge"] ?? "-"),
         house: data["house"] ?? "-",
         comment: data["comment"] ?? "-",
+        tranfer: data["tranfer"] ?? "-",
       },
     ]);
 
@@ -224,7 +226,7 @@ export default function Register() {
                     <>
                       <div className="md:col-span-5">
                         <label htmlFor="merriedInfo">
-                          Укажите фимилию и имя
+                          Укажите фамилию и имя
                         </label>
                         <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                           <textarea
@@ -303,6 +305,27 @@ export default function Register() {
                       </div>
                     </>
                   )}
+                  <div className="md:col-span-5 flex flex-col">
+                    <label htmlFor="tranfer" className="mb-2">
+                      Транспорт
+                      <div className="text-sm mt-2">
+                        База находится 20 км от Баранович в сторону Ляховичей.
+                        Сбор отправления в 12:00 со Смоленской 28, г. Барановичи
+                      </div>
+                    </label>
+                    <select
+                      className="select select-primary w-full max-w-xs"
+                      defaultValue="Eду на общем автобусе"
+                      {...register("tranfer")}
+                    >
+                      <option value="Eду на общем автобусе">
+                        Eду на общем автобусе
+                      </option>
+                      <option value="Eду на своем транспорте">
+                        Eду на своем транспорте
+                      </option>
+                    </select>
+                  </div>
                   <div className="md:col-span-5">
                     <label htmlFor="merriedInfo">Комментарий</label>
                     <div className="h-32 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
