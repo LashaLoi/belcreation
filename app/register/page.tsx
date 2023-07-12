@@ -308,10 +308,6 @@ export default function Register() {
                   <div className="md:col-span-5 flex flex-col">
                     <label htmlFor="tranfer" className="mb-2">
                       Транспорт
-                      <div className="text-sm mt-2">
-                        База находится 20 км от Баранович в сторону Ляховичей.
-                        Сбор отправления в 12:00 со Смоленской 28, г. Барановичи
-                      </div>
                     </label>
                     <select
                       className="select select-primary w-full max-w-xs"
