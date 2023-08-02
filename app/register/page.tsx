@@ -96,21 +96,6 @@ export default function Register() {
           <h2 className="font-semibold text-xl text-gray-600 mb-4">
             Регистрация на BELCREATION
           </h2>
-          <div className="text-gray-500 mb-2">ОПЛАТА</div>
-          <div className="text-gray-500 mb-2">
-            <div>Проживание в домике будет стоить - 210р</div>
-            <div>Проживание в палатке будет стоить - 150р</div>
-          </div>
-
-          <div className="text-gray-500 mb-4">
-            <div>Для семьи от 5 человек:</div>
-            <div>Цена за проживание в домике (за одного человека) - 150р</div>
-            <div>Цена за проживание в палатке (за одного человека) - 100р</div>
-          </div>
-
-          <div className="text-gray-500 mb-6">
-            <div>Детям до 3 лет - бесплатно</div>
-          </div>
 
           <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
