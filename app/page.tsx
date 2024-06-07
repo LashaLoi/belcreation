@@ -1,11 +1,11 @@
-import { Header } from "@/app/components/Header";
+import { Hero } from "@/app/components/Hero";
 import { Content } from "@/app/components/Content";
 import { Faq } from "@/app/components/FAQ";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Hero />
       <Content />
       <Faq />
     </>

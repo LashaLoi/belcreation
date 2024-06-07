@@ -1,6 +1,5 @@
 "use client";
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -28,7 +27,6 @@ type Inputs = {
 export default function Register() {
   const router = useRouter();
   const { register, handleSubmit, watch } = useForm<Inputs>();
-  const supabase = createClientComponentClient();
 
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -39,26 +37,29 @@ export default function Register() {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setLoading(true);
 
-    const user = await supabase.from("users").insert([
-      {
-        fullName: data["fullName"] ?? "-",
-        age: data["age"] ?? "-",
-        phone: data["phone"] ?? "-",
-        church: data["church"] ?? "-",
-        city: data["city"] ?? "-",
-        child: data["child"] ?? "-",
-        childInfo: (data["childInfo"] ?? "-") + " " + (data["childAge"] ?? "-"),
-        alerg: data["alerg"] ?? "-",
-        youtime: data["youtime"] ?? "-",
-        merried: data["merried"] ?? "-",
-        merriedInfo:
-          (data["merriedInfo"] ?? "-") + " " + (data["merriedAge"] ?? "-"),
-        house: data["house"] ?? "-",
-        comment: data["comment"] ?? "-",
-        tranfer: data["tranfer"] ?? "-",
-      },
-    ]);
+    const user = { data };
 
+    // const user = await supabase.from("users").insert([
+    //   {
+    //     fullName: data["fullName"] ?? "-",
+    //     age: data["age"] ?? "-",
+    //     phone: data["phone"] ?? "-",
+    //     church: data["church"] ?? "-",
+    //     city: data["city"] ?? "-",
+    //     child: data["child"] ?? "-",
+    //     childInfo: (data["childInfo"] ?? "-") + " " + (data["childAge"] ?? "-"),
+    //     alerg: data["alerg"] ?? "-",
+    //     youtime: data["youtime"] ?? "-",
+    //     merried: data["merried"] ?? "-",
+    //     merriedInfo:
+    //       (data["merriedInfo"] ?? "-") + " " + (data["merriedAge"] ?? "-"),
+    //     house: data["house"] ?? "-",
+    //     comment: data["comment"] ?? "-",
+    //     tranfer: data["tranfer"] ?? "-",
+    //   },
+    // ]);
+
+    // @ts-ignore
     if (user.error) {
       setError(true);
       setLoading(false);
