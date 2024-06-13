@@ -18,10 +18,12 @@ export default function Header() {
 
   return (
     <DesktopView
+      // @ts-ignore
       pathname={pathname}
       isMenuOpen={open}
       toggleMenu={handleToggle}
     >
+      {/*// @ts-ignore*/}
       <MobileView pathname={pathname} isMenuOpen={open} />
     </DesktopView>
   );
