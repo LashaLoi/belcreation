@@ -1,11 +1,26 @@
+import { FadeIn } from "@/app/components/FadeIn";
+
 export const Faq = () => {
   return (
-    <section className="bg-white ">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <h2 className="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 ">
+    <FadeIn
+      initial={{
+        opacity: 0,
+        x: 100,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      transition={{
+        delay: 0.5,
+      }}
+      className="bg-white "
+    >
+      <div className="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
+        <h2 className="mb-8 text-3xl tracking-tight font-extrabold text-gray-900">
           Часто задаваемые вопросы:
         </h2>
-        <div className="grid pt-8 text-left border-t border-gray-200 md:gap-16  md:grid-cols-2">
+        <div className="grid pt-8 text-left border-t border-gray-200 md:gap-16 grid-cols-1">
           <div>
             <div className="mb-10">
               <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 ">
@@ -72,6 +87,6 @@ export const Faq = () => {
           </div>
         </div>
       </div>
-    </section>
+    </FadeIn>
   );
 };
