@@ -5,6 +5,7 @@ import useKeypress from "react-use-keypress";
 import type { ImageProps } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 import SharedModal from "./SharedModal";
+import { ArrowUturnLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Carousel({
   index,
@@ -19,7 +20,7 @@ export default function Carousel({
   function closeModal() {
     // @ts-ignore
     setLastViewedPhoto(currentPhoto.id);
-    router.push("/", undefined, { shallow: true });
+    router.push("/gallery", undefined, { shallow: true });
   }
 
   function changePhotoId(newVal: number) {

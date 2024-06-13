@@ -9,10 +9,8 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="Все фотографии со СКИНИЯ 2023!" />
         </Head>
         <body className="bg-white antialiased">
-          <Header />
           <Main />
           <NextScript />
           <Footer />

@@ -1,5 +1,4 @@
 import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import Carousel from "@/app/components/Carousel";
 import cloudinary from "@/app/utils/cloudinary";
@@ -17,11 +16,6 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
 
   return (
     <>
-      <Head>
-        <title>Next.js Conf 2022 Photos</title>
-        <meta property="og:image" content={currentPhotoUrl} />
-        <meta name="twitter:image" content={currentPhotoUrl} />
-      </Head>
       <main className="mx-auto max-w-[1960px] p-4">
         <Carousel currentPhoto={currentPhoto} index={index} />
       </main>

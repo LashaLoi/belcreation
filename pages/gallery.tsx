@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -9,6 +8,7 @@ import cloudinary from "@/app/utils/cloudinary";
 import getBase64ImageUrl from "@/app/utils/generateBlurPlaceholder";
 import type { ImageProps } from "@/app/utils/types";
 import { useLastViewedPhoto } from "@/app/utils/useLastViewedPhoto";
+import { ArrowUturnLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 // @ts-ignore
 const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
@@ -28,10 +28,13 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
 
   return (
     <>
-      <Head>
-        <title>СКИНИЯ 2024</title>
-      </Head>
       <main className="mx-auto max-w-[1960px] p-4">
+        <button
+          onClick={() => router.push("/")}
+          className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white my-4"
+        >
+          <ArrowUturnLeftIcon className="h-5 w-5" />
+        </button>
         {photoId && (
           <Modal
             images={images}
@@ -42,11 +45,6 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
           />
         )}
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
-          <div className="after:content relative mb-5 flex text-black flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-white/10 px-6 pb-16  text-center  shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight lg:pt-0">
-            <h1 className="mb-4 text-base font-bold uppercase tracking-widest">
-              BELCREATION
-            </h1>
-          </div>
           {images.map(({ id, public_id, format, blurDataUrl }) => (
             <Link
               key={id}

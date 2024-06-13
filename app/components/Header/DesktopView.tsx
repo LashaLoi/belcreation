@@ -19,7 +19,7 @@ export default function DesktopView({
   children: React.ReactNode;
 }) {
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 z-[100] relative">
+    <div className="bg-white px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 z-[100] relative">
       <div className="grid items-center grid-cols-2 lg:grid-cols-3">
         <ul className="items-center hidden space-x-8 lg:flex">
           {items.map(({ path, text }) => (
