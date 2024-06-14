@@ -13,7 +13,6 @@ class MyDocument extends Document {
         <body className="bg-white antialiased">
           <Main />
           <NextScript />
-          <Footer />
         </body>
       </Html>
     );
