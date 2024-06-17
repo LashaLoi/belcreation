@@ -4,31 +4,31 @@ import { MutableRefObject } from "react";
 
 const links = [
   {
-    name: "О нас",
+    name: "О НАС",
     refName: "about",
   },
   {
-    name: "Расселение",
+    name: "РАССЕЛЕНИЕ",
     refName: "places",
   },
   {
-    name: "Твое время",
+    name: "ТВОЕ ВРЕМЯ",
     refName: "time",
   },
   {
-    name: "Детская программа",
+    name: "ДЕТСКАЯ ПРОГРАММА",
     refName: "child",
   },
   {
-    name: "Командные игры",
+    name: "КОМАНДНЫЕ ИГРЫ",
     refName: "games",
   },
   {
-    name: "Что нужно взять с собой",
+    name: "ЧТО НУЖНО ИМЕТЬ С СОБОЙ",
     refName: "tools",
   },
   {
-    name: "Часто задаваемые вопросы",
+    name: "ВОПРОСЫ",
     refName: "faq",
   },
 ];
@@ -37,23 +37,23 @@ type LinksProps = {
   refs: Record<string, MutableRefObject<HTMLDivElement>>;
 };
 
+const colors = ["bg-[#FECC17]", "bg-[#F3A3B0]", "bg-[#30548B]"];
+
 export default function Links({ refs }: LinksProps) {
-  const handleClick = (refName: string) => {
+  const handleClick = (refName: string) =>
     refs[refName].current.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
-    <FadeIn className="mx-auto max-w-lg sm:p-0 p-4 gap-2 flex flex-col">
+    <FadeIn className="flex justify-center flex-wrap w-full gap-2">
       {links.map(({ name, refName }, i) => (
-        <motion.div
+        <motion.button
           whileHover={{ scale: 1.05 }}
           onClick={() => handleClick(refName)}
-          role="button"
-          className="bg-gray-100 hover:bg-gray-200 cursor-pointer transition-all sm:p-4 p-2 rounded"
+          className={`cursor-pointer transition-all sm:p-4 p-3 rounded-2xl font-bold text-white ${colors[Math.floor(i % 3)]}`}
           key={i}
         >
           {name}
-        </motion.div>
+        </motion.button>
       ))}
     </FadeIn>
   );
