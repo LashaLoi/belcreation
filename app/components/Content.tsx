@@ -137,14 +137,6 @@ export const Content = ({
             </div>
           </Slider>
         </div>
-
-        <Image
-          src="/pic3.png"
-          height={300}
-          width={300}
-          alt="pic1"
-          className="mx-auto"
-        />
       </FadeIn>
     </div>
     <div ref={timeRef}>
@@ -217,16 +209,10 @@ export const Content = ({
       >
         <div className="p-4 mb-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24">
           <div className="max-w-screen-sm sm:text-center sm:mx-auto">
-            <h2 className="mb-4 font-sans text-3xl font-bold tracking-tight text-[#FECC17] sm:text-4xl sm:leading-none">
+            <h2 className="mb-10 font-sans text-3xl font-bold tracking-tight text-[#FECC17] sm:text-4xl sm:leading-none">
               Детская программа
             </h2>
-            <Image
-              src="/children.avif"
-              height={300}
-              width={300}
-              alt="pic3"
-              className="mx-auto my-4"
-            />
+
             <p className="sm:text-xl text-lg text-gray-700">
               Во время выезда будет организована интересная программа для детей
               в возрасте от 6 до 10 лет. Ребят ждёт увлекательное время с
@@ -261,11 +247,6 @@ export const Content = ({
             </div>
           </Slider>
         </div>
-        {/*<div className="flex justify-center mt-10">*/}
-        {/*  <Link href="/register">*/}
-        {/*    <Button>Подробнее</Button>*/}
-        {/*  </Link>*/}
-        {/*</div>*/}
       </FadeIn>
     </div>
 

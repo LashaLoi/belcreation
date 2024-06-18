@@ -43,7 +43,11 @@ export default function Register() {
           </h2>
 
           <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full flex flex-col items-center justify-center">
+              <p className="text-xl font-bold text-[#FECC17]">
+                19-24 августа (6 дней)
+              </p>
+
               <Image
                 height={400}
                 width={600}
@@ -66,7 +70,7 @@ export default function Register() {
                 </div>
                 <div className="md:col-span-5">
                   <Input
-                    label={"Возраст"}
+                    label={"Дата рождения"}
                     required
                     register={register}
                     registerName={"age"}
@@ -140,7 +144,7 @@ export default function Register() {
                     </div>
                     <div className="md:col-span-5">
                       <Input
-                        label={"Укажите возраст"}
+                        label={"Укажите дату рождения"}
                         register={register}
                         registerName={"merriedAge"}
                         required
@@ -168,7 +172,7 @@ export default function Register() {
                     </div>
                     <div className="md:col-span-5">
                       <Input
-                        label={"Укажите возраст / возроста"}
+                        label={"Укажите даты рождения"}
                         register={register}
                         registerName={"childAge"}
                         required
