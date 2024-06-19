@@ -40,8 +40,9 @@ type LinksProps = {
 const colors = ["bg-[#FECC17]", "bg-[#F3A3B0]", "bg-[#30548B]"];
 
 export default function Links({ refs }: LinksProps) {
-  const handleClick = (refName: string) =>
+  const handleClick = (refName: string) => {
     refs[refName].current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <FadeIn className="flex justify-center flex-wrap w-full gap-2">

@@ -19,7 +19,7 @@ export default function Home() {
 
   const refs = {
     about: aboutRef,
-    place: placesRef,
+    places: placesRef,
     time: timeRef,
     child: childRef,
     games: gamesRef,
