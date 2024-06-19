@@ -48,6 +48,37 @@ export default function Register() {
                 19-24 августа (6 дней)
               </p>
 
+              <h2 className="text-xl mt-10 mb-4 text-[#F3A3B0]">
+                ДОБРОВОЛЬНОЕ ПОЖЕРТВОВАНИЕ
+              </h2>
+
+              <div className="flex flex-col justify-center items-center text-gray-600">
+                <p>
+                  от 0-3 лет <span className="font-bold">бесплатно</span>
+                </p>
+                <p>
+                  <span className="font-bold">210Р</span> - за одного человека в
+                  домике
+                </p>
+                <p className="mb-4">
+                  <span className="font-bold">150Р</span> - за одного человека в
+                  палатке
+                </p>
+
+                <p>
+                  семья <span className="font-bold">(от 5 человек):</span>
+                </p>
+
+                <p>
+                  <span className="font-bold">150Р</span> - за одного человека в
+                  домике
+                </p>
+                <p>
+                  <span className="font-bold">100р</span> - за одного человека в
+                  палатке
+                </p>
+              </div>
+
               <Image
                 height={400}
                 width={600}
@@ -159,6 +190,11 @@ export default function Register() {
                     register={register}
                     registerName={"child"}
                   />
+                  <p className="text-gray-500 mt-2">
+                    <span className="text-red-300">*</span> внимание! дети до 14
+                    лет только в сопровождении родителей! с 15 до 18 лет должна
+                    быть доверенность от родителей на детей.
+                  </p>
                 </div>
                 {isChild && (
                   <>
@@ -180,9 +216,7 @@ export default function Register() {
                     </div>
                     <div className="md:col-span-5">
                       <Input
-                        label={
-                          "Есть ли какая-то пищевая аллергия или аллергия на медикаменты?"
-                        }
+                        label={"Есть ли аллергии?"}
                         register={register}
                         registerName={"alerg"}
                         required

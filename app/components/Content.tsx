@@ -179,6 +179,15 @@ export const Content = ({
             <div>
               <Image src="/time3.JPG" alt="tent2" width={400} height={400} />
             </div>
+            <div>
+              <Image src="/time01.JPG" alt="tent2" width={400} height={400} />
+            </div>
+            <div>
+              <Image src="/time02.JPG" alt="tent2" width={400} height={400} />
+            </div>
+            <div>
+              <Image src="/time03.JPG" alt="tent2" width={400} height={400} />
+            </div>
           </Slider>
         </div>
 
@@ -265,19 +274,7 @@ export const Content = ({
         }}
         className="bg-white "
       >
-        <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-          <div className="grid grid-cols-2 gap-4 mt-8">
-            <img
-              className="w-full rounded-lg"
-              src="30.jpg"
-              alt="office content 1"
-            />
-            <img
-              className="mt-4 w-full lg:mt-10 rounded-lg"
-              src="33.jpg"
-              alt="office content 2"
-            />
-          </div>
+        <div className="p-4 mb-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 mt-10 sm:text-center">
           <div className="font-light text-gray-500 sm:text-lg ">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">
               Командные игры
@@ -289,6 +286,58 @@ export const Content = ({
               учатся выстраивать отношения друг с другом, что даст отличный опыт
               для реальной жизни.
             </p>
+            <div className="sm:w-3/4 w-full mx-auto">
+              <Slider {...settings}>
+                <div>
+                  <Image
+                    src="/team0.jpg"
+                    alt="tent2"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/team1.JPG"
+                    alt="tent2"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/team2.JPG"
+                    alt="tent2"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/team3.JPG"
+                    alt="tent2"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/team4.JPG"
+                    alt="tent2"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/team5.JPG"
+                    alt="tent2"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+              </Slider>
+            </div>
           </div>
         </div>
       </FadeIn>
@@ -318,10 +367,9 @@ export const Content = ({
             <h2 className="mb-4 text-4xl tracking-tight font-bold text-[#F3A3B0]">
               ЧТО НУЖНО ВЗЯТЬ С СОБОЙ НА ВЫЕЗД?
             </h2>
-            <p className="mb-4 ">
-              Мы предоставляем туалеты, а также холодную и горячую воду в
-              душевых кабинках, трёхразовое питание, а также небольшое кафе, где
-              вы сможете за небольшую плату купить мороженое или батончик.
+            <p className="mb-4">
+              Мы предоставляем туалеты, холодную и горячую воду в душевых
+              кабинках, а также трёхразовое питание.
             </p>
             <div className="text-xl font-bold text-[#FECC17] mt-10 mb-6">
               Для проживания в домиках вам необходимы:
@@ -339,7 +387,7 @@ export const Content = ({
               <hr />
               <div className="">Средства личной гигиены</div>
               <hr />
-              <div className="">Средства от комаров</div>
+              <div className="">Средство от комаров</div>
               <hr />
               <div className="">Тёплая и спортивная одежда</div>
               <hr />
