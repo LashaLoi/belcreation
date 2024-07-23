@@ -91,6 +91,22 @@ export default function Register() {
                 className="grid gap-4 gap-y-4 text-sm grid-cols-1 md:grid-cols-5"
                 onSubmit={onSubmit}
               >
+                <div className="md:col-span-5">
+                  <p className="mb-2 font-bold">
+                    <span className="text-red-300">*</span>Дети от 14 до 18 лет
+                    могут ехать без родителей в случае если у них есть
+                    доверенность от родителей на совершеннолетнего
+                    сопровождающего
+                  </p>
+                  <a
+                    href="/Документ.pdf"
+                    target="_blank"
+                    className="text-[#30548B] hover:underline"
+                  >
+                    Образец доверенности
+                  </a>
+                </div>
+
                 <div className="md:col-span-5 mt-4">
                   <Input
                     label={"Фамилия и имя"}
