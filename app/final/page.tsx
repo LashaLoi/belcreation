@@ -19,9 +19,9 @@ export default function FinalPage() {
               <Button className="!w-[200px]">На главную</Button>
             </Link>
 
-            <Link href="/register">
+            {/* <Link href="/register">
               <Button className="!bg-[#FECC17] !w-[200px]">Регистрация</Button>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <Confetti />

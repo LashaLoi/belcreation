@@ -11,10 +11,10 @@ export default function MobileView({
 }) {
   const mobileItems = [
     ...items,
-    {
-      path: "/register",
-      text: "РЕГИСТРАЦИЯ",
-    },
+    // {
+    //   path: "/register",
+    //   text: "РЕГИСТРАЦИЯ",
+    // },
   ];
 
   return (

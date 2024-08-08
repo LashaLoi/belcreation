@@ -397,8 +397,8 @@ export const Content = ({
       </FadeIn>
     </div>
 
-    <Link href="/register" className="w-full flex justify-center mb-4">
+    {/* <Link href="/register" className="w-full flex justify-center mb-4">
       <Button>Регистрация</Button>
-    </Link>
+    </Link> */}
   </>
 );

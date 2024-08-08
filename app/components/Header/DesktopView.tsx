@@ -42,12 +42,12 @@ export default function DesktopView({
             Belcreation
           </span>
         </Link>
-        <Link
+        {/* <Link
           href="/register"
           className="items-center hidden ml-auto space-x-8 lg:flex"
         >
           <Button>Регистрация</Button>
-        </Link>
+        </Link> */}
         <div className="ml-auto lg:hidden">
           <button
             className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"

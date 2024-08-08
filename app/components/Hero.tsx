@@ -16,9 +16,9 @@ export const Hero = () => (
         <h2 className="text-3xl md:text-5xl leading-relaxed md:leading-snug">
           Семейный выезд для всех возрастов!
         </h2>
-        <Link href="/register" className="mt-4">
+        {/* <Link href="/register" className="mt-4">
           <Button>Регистрация</Button>
-        </Link>
+        </Link> */}
       </FadeIn>
 
       <FadeIn

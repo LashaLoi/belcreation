@@ -9,10 +9,13 @@ import { Checkbox } from "@/app/components/Checkbox";
 import Image from "next/image";
 import React from "react";
 import { FadeIn } from "@/app/components/FadeIn";
+import { redirect } from "next/navigation";
 
 export default function Register() {
   const { onSubmit, isChild, isMerried, register, error, loading } =
     useSubmit();
+
+  redirect("/");
 
   return (
     <FadeIn className="min-h-screen bg-gray-100 flex items-center justify-center overflow-x-hidden">
