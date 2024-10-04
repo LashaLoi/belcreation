@@ -12,7 +12,7 @@ export const Footer = () => {
             </span>
           </a>
         </div>
-        <div className="space-y-2 text-sm">
+        {/* <div className="space-y-2 text-sm">
           <p className="text-base font-bold tracking-wide text-gray-900">
             Контакты
           </p>
@@ -34,7 +34,7 @@ export const Footer = () => {
               +375 (29) 826-46-69
             </a>
           </div>
-        </div>
+        </div> */}
         <div>
           <span className="text-base font-bold tracking-wide text-gray-900">
             Социальные сети
@@ -70,7 +70,7 @@ export const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
+      {/* <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
         <p className="text-sm text-gray-600">
           Created by{" "}
           <a
@@ -80,7 +80,7 @@ export const Footer = () => {
             @SideswipeLoi
           </a>
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
